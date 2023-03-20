@@ -5,7 +5,7 @@ require 'cgi'
 
 bot = Cinch::Bot.new do
   configure do |c|
-    c.server   = "irc.freenode.net"
+    c.server   = "irc.libera.chat"
     c.nick     = "MrCinch"
     c.channels = ["#cinch-bots"]
   end
@@ -15,15 +15,16 @@ bot = Cinch::Bot.new do
     # or "No results found" otherwise
     def google(query)
       url = "http://www.google.com/search?q=#{CGI.escape(query)}"
-      res = Nokogiri.parse(open(url).read).at("h3.r")
-
-      title = res.text
-      link = res.at('a')[:href]
-      desc = res.at("./following::div").children.first.text
-    rescue
-      "No results found"
+      content = URI.open(url).read
+      parsed_content = Nokogiri.parse(content)
+      
+      # Parse the result: first result's title, description and link
+      title = parsed_content.css('h3').first&.text || "No results found"
+      link = parsed_content.css('cite').first&.text || "No link found"
+    rescue StandardError => e
+      return "Error: #{e.message} (#{e.class})"
     else
-      CGI.unescape_html "#{title} - #{desc} (#{link})"
+      CGI.unescape_html "#{title} - (#{link})"
     end
   end
 
