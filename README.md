@@ -23,10 +23,10 @@ Installation
 
 ### RubyGems
 
-You can install the latest Cinch gem using RubyGems
+For now, Cinch-cont is only available through Github. You can install it in your project by adding this to your Gemfile:
 
 ```
-gem install cinch
+gem 'cinch', :git => 'https://github.com/kaiks/cinch-cont.git'
 ```
 
 ### GitHub
@@ -34,7 +34,7 @@ gem install cinch
 Alternatively you can check out the latest code directly from Github
 
 ```
-git clone http://github.com/cinchrb/cinch.git
+git clone https://github.com/kaiks/cinch-cont.git
 ```
 
 Example
