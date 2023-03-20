@@ -1,10 +1,9 @@
 Cinch - The IRC Bot Building Framework
 =====================================
 
-**The Cinch project is no longer maintained. No new features will be
-added, and no bugs will be fixed. The repository has been archived. If
-you wish to continue developing Cinch, please fork the project. I am
-not accepting new maintainers for this project.**
+This is a fork of the original Cinch project, which is no longer maintained.
+It brings the project up to date with the latest Ruby versions.
+
 
 Description
 -----------
@@ -17,8 +16,7 @@ profits flourish.
 Cinch will do all of the hard work for you, so you can spend time creating cool
 plugins and extensions to wow your internet peers.
 
-For general support, join #cinch channel on Freenode server (irc://irc.freenode.org/cinch) – but
-please don't bring any bots.
+For support, please submit an issue on GitHub.
 
 Installation
 ------------
@@ -49,7 +47,7 @@ require 'cinch'
 
 bot = Cinch::Bot.new do
   configure do |c|
-    c.server = "irc.freenode.org"
+    c.server = "irc.libera.chat"
     c.channels = ["#cinch-bots"]
   end
 
@@ -122,7 +120,7 @@ end
 
 bot = Cinch::Bot.new do
   configure do |c|
-    c.server = "irc.freenode.org"
+    c.server = "irc.libera.chat"
     c.channels = ["#cinch-bots"]
     c.plugins.plugins = [Hello]
   end

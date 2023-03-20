@@ -11,7 +11,7 @@ require 'cinch'
 bot = Cinch::Bot.new do
   configure do |c|
     c.nick            = "cinch_autovoice"
-    c.server          = "irc.freenode.org"
+    c.server          = "irc.libera.chat"
     c.verbose         = true
     c.channels        = ["#cinch-bots"]
   end

@@ -22,7 +22,7 @@ end
 bot = Cinch::Bot.new do
   configure do |c|
     c.nick            = "cinch_multi"
-    c.server          = "irc.freenode.org"
+    c.server          = "irc.libera.chat"
     c.channels        = ["#cinch-bots"]
     c.verbose         = true
     c.plugins.plugins = [MultiCommands]
